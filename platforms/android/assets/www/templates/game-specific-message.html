@@ -1,0 +1,43 @@
+<ion-view title="SPECIFIC MESSAGE" ng-controller="SpecificMessageCtrl">
+  <ion-content class="page page-listmain page-game-message has-subheader">
+    <ion-list>
+      <div style="text-align: center;display: block;">
+        <div class="custom-item-title">
+          {{ 'SEND_SPECIFIC_INSTRUCTION' | translate }}
+        </div>
+        <ion-item class="item">
+          <div class="item item-divider">{{ 'WHO_TO_SEND_TO' | translate }}</div>
+          <div class="item item-body">
+            <div class="checkbox-container">
+              <input type="checkbox" id="allmembers" ng-click="setflag('all')"  ng-checked="messageFlagData.all" class="css-checkbox" value = "allmembers"/>
+              <label for="allmembers" class="css-label radGroup1">{{ 'ALL_TEAM_MEMBER' | translate }}</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="inmembers" ng-checked="messageFlagData.in" class="css-checkbox" value = "inmembers"/>
+              <label for="inmembers" class="css-label radGroup1">{{ 'ALL_IN_MEMBER' | translate }}</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="outmembers" ng-checked="messageFlagData.out" class="css-checkbox" value = "outmembers"/>
+              <label for="outmembers" class="css-label radGroup1">{{ 'ALL_OUT_MEMBER' | translate }}</label>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="pendingmembers" ng-checked="messageFlagData.pending" class="css-checkbox" value = "pendingmembers"/>
+              <label for="pendingmembers" class="css-label radGroup1">{{ 'ALL_PENDING_MEMBER' | translate }}</label>
+            </div>
+          </div>
+        </ion-item>
+        <!--<ion-item class="item item-icon-left" ng-click="goToPage('app.roster-member');">
+          <i class="icon"><img class="custom-list-icon" src="img/email-send-ico.png"/></i>
+          <p>Contact Specific Players</p>
+        </ion-item>-->
+      </div>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar class="organizate-footer">
+    <div class="footer-container">
+      <div class="container-footer">        
+        <div class="button button-clear footer-green-button" ng-click="sendSpecMessage('game-home');">{{ 'SEND_TO_SELECTED_PLAYERS' | translate }}</div>         
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>
